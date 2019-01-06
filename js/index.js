@@ -32,7 +32,7 @@ gameScene.preload = function () {
 
 gameScene.create = function () {
     //BG music
-    this.BGmusic = this.sound.add('BGmusic', { volume: 1, loop: true });
+    this.BGmusic = this.sound.add('BGmusic', { volume: 0.1, loop: true });
 
     this.body = this.add.sprite(0, 0, 'body', 0)
 
