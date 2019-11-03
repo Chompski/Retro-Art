@@ -15,7 +15,9 @@ gameScene.init = function () {
 // Load assets
 gameScene.preload = function () {
     // load images
-    // this.load.image('hand', 'assets/HandOrb.png');
+    this.load.image('BG', 'assets/background.jpg');
+    
+
 
     this.load.spritesheet('body', 'assets/SkeleBody.png', {
         frameWidth: 200,
@@ -33,6 +35,9 @@ gameScene.preload = function () {
 gameScene.create = function () {
     //BG music
     this.BGmusic = this.sound.add('BGmusic', { volume: 0.1, loop: true });
+
+    this.add.image(0, 0, 'BG').setOrigin(0);
+
 
     this.body = this.add.sprite(0, 0, 'body', 0)
 
@@ -100,7 +105,7 @@ gameScene.update = function () {
     this.hand.y += this.moveY
     this.hand.x += this.moveX
 
-    //console.log (this.bounce)
+    console.log (this.bounce)
 
 
 }
@@ -118,6 +123,8 @@ let config = {
     width: 800,
     height: 600,
     pixelArt: true,
+transparent: true,
+   backgroundColor: 'rgba(255,110,110,0)',
     zoom: 1,
     scene: gameScene,
     parent: 'phaser'
